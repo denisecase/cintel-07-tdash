@@ -15,6 +15,11 @@ Go to Dashboards / Basic Dashboard.
 
 - <https://shiny.posit.co/py/templates/dashboard/>
 
+## Reference App with Detailed Instructions
+
+For more detailed instructions, see <https://github.com/denisecase/pyshiny-penguins-dashboard-express>.
+That project README.md has more detailed instructions, including reminders for Mac and Linux. 
+
 ## Get the Code
 
 Fork this project into your own GitHub account.
@@ -61,13 +66,18 @@ Open a terminal (VS Code menu "View" / "Terminal") in the root project folder an
 shiny run --reload --launch-browser app/app.py
 ```
 
+While the app is running, the terminal is fully engaged and cannot be used for other commands. 
+To kill the terminal, click the trashcan icon in the VS Code terminal window. 
+
 ## After Changes, Export to Docs Folder
 
 Export to docs folder and test GitHub Pages locally.
 
-Open a terminal (VS Code menu "Terminal" / "New Terminal") in the root project folder and run these commands.
+Open a new terminal (VS Code menu "Terminal" / "New Terminal") in the root project folder and run these commands. 
+Remember to activate the environment first. 
 
 ```shell
+.venv\Scripts\Activate
 shiny static-assets remove
 shinylive export app docs
 py -m http.server --directory docs --bind localhost 8008
