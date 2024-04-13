@@ -51,21 +51,21 @@ with ui.sidebar(title="Filter controls"):
 
 #create columns for the box of data for the statistics
 with ui.layout_column_wrap(fill=False):
-    with ui.value_box(showcase=icon_svg("earlybirds")):
+    with ui.value_box(showcase=icon_svg("earlybirds")style=,"color:red; background-color: blue;"):
         "Number of penguins"
 
         @render.text
         def count():
             return filtered_df().shape[0]
 #display average bill length
-    with ui.value_box(showcase=icon_svg("ruler-horizontal")):
+    with ui.value_box(showcase=icon_svg("ruler-horizontal")style=,"color:red; background-color: blue;"):
         "Average bill length"
 
         @render.text
         def bill_length():
             return f"{filtered_df()['bill_length_mm'].mean():.1f} mm"
 #display average bill depth
-    with ui.value_box(showcase=icon_svg("ruler-vertical")):
+    with ui.value_box(showcase=icon_svg("ruler-vertical")style=,"color:red; background-color: blue;"):
         "Average bill depth"
 
         @render.text
