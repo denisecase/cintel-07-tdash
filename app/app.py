@@ -11,6 +11,8 @@ df = palmerpenguins.load_penguins()
 #set up page title
 ui.page_opts(title="Arsh Kandola Penguins dashboard", fillable=True)
 
+
+
 #create a sidebar and filters
 with ui.sidebar(title="Filter controls"):
     ui.input_slider("mass", "Mass", 2000, 6000, 6000)
