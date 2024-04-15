@@ -9,7 +9,7 @@ import palmerpenguins
 df = palmerpenguins.load_penguins()
 
 #set up page title
-ui.page_opts(title="Penguins dashboard", fillable=True)
+ui.page_opts(title="Arsh Kandola Penguins dashboard", fillable=True)
 
 #create a sidebar and filters
 with ui.sidebar(title="Filter controls"):
@@ -24,12 +24,12 @@ with ui.sidebar(title="Filter controls"):
     ui.h6("Links")
     ui.a(
         "GitHub Source",
-        href="https://github.com/denisecase/cintel-07-tdash",
+        href="https://github.com/akandola47/cintel-07-tdash",
         target="_blank",
     )
     ui.a(
         "GitHub App",
-        href="https://denisecase.github.io/cintel-07-tdash/",
+        href="https://akandola47.github.io/cintel-07-tdash/",
         target="_blank",
     )
     ui.a(
@@ -83,8 +83,22 @@ with ui.layout_columns():
                 data=filtered_df(),
                 x="bill_length_mm",
                 y="bill_depth_mm",
-                hue="species",
+                color="species",
             )
+#create columns to display the data
+with ui.layout_columns():
+    with ui.card(full_screen=True):
+        ui.card_header("Plotly Chart")
+#create a plotly chart
+        @render.plotly
+        def length_depth_plotly():
+            return px.histogram(
+                data=filtered_df(),
+                x="bill_length_mm",
+                y="bill_depth_mm",
+                color="species",
+            )
+    
 #create a summery for the statistics of the penguin data
     with ui.card(full_screen=True):
         ui.card_header("Penguin data")
