@@ -48,8 +48,8 @@ with ui.sidebar(title="Filter Controls"):
         target="_blank",
     )
     ui.a(
-        "See Also",
-        href="https://github.com/Tesfamariam100/pyshiny-penguins-dashboard-express",
+        "See also",
+        href="https://github.com/denisecase/pyshiny-penguins-dashboard-express",
         target="_blank",
     )
 
